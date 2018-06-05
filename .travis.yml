@@ -1,8 +1,19 @@
 os: osx
 language: node_js
-node_js: "9"
+node_js: '9'
 cache:
-    directories:
-        - "node_modules"
+  directories:
+    - node_modules
 script:
-- npx qbrt package hello-world-html
+  - npx qbrt package hello-world-html
+  - npx qbrt package --win hello-world-html
+  - npx qbrt package --linux hello-world-html
+deploy:
+  provider: releases
+  api_key:
+    secure: N1pD/zfSwBwGlKtcCiyN64vFbY9eHT0hELgk5rVNo042z14AsWJwl6j7sOvf+hJKfq+MG9b6/LQ+g8I5z2Y1WrQrWy+BMZJR0uGa4VeI8MB2XvmyNy2mjTyL9fgCPo5Lg8Uxp55v9/Y71apIgXRf7U2aAELrCoYMMxmah2rnl8oj+Al2f63jUcVhU0IxIt9djq2Zmt4YllH/UsheQVtRn51sNJGt/tZJ8wZfRg2hfKg+YcluCUH46Fz31ZQXIgJYWkFq3Qkfsk/BaqbMnEd2S4mQWHpNlPOnLM6GqKqNecHhpMWargq1ESk2CYiyVAOEAgU/tE9K5VB47HEuyeUvr+mc3q2aCBCdvCYknQh1RQOElfivfG7eTTbLPKJfvRe2/uMW9GD7aSPb6n1ZEpV7RGmtcMM+2zRnDcOLRdaXLwFHyzF2HZxGnJQAZp7+8YQicVcpxHxlHkctw8BUDqW7OG0sEQiTj6eZpkBxxzfTkr2vzTvLx/Y/QQcXeF/jYU5FrtaS+uGv1+UJGs6KO+tQHJaKn35v4Ls7lCTJSvSwGHoQP9a2kSTgonFpHLdFKkFy+h3lhWVrXAHWx5jZcNFCo6OSl+CpxXWZ4/iBYrMnMxc/cmcw1jBOyfxvA+cGLIEtDl00+YAtrs78DDmVe4Y4+PHKo3nyVrXz9X9k8645I4U=
+  file: 
+    - "hello-world.dmg"
+    - "hello-world.zip"
+    - "hello-world.tgz"
+  skip_cleanup: true
