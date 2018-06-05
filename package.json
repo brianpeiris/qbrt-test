@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "qbrt": "^0.2.5"
+    "qbrt": "github:brianpeiris/qbrt#8d6931a"
   }
 }
