@@ -2,8 +2,9 @@ os: osx
 language: node_js
 node_js: '9'
 cache:
-  directories:
-    - node_modules
+  directories: node_modules
+branches:
+  only: master
 script:
   - npx qbrt package hello-world-html
   - npx qbrt package --win hello-world-html
